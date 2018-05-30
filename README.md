@@ -35,7 +35,7 @@ test regular medata access from pod
 
 ```console
 user@cloud-shell $ gcloud container clusters get-credentials conceal-1-9 --zone $ZONE && kubectl run -it --rm my-shell --image nginx -- bash
-apt-get update -qy && apt-get install -qy curl && curl metadata.google.internal/computeMetadata/v1/instance/name -i -H 'Metadata-Flavor:Google' && echo $?
+root@pod# apt-get update -qy && apt-get install -qy curl && curl metadata.google.internal/computeMetadata/v1/instance/name -i -H 'Metadata-Flavor:Google' && echo $?
 
 HTTP/1.1 200 OK
 Content-Length: 42
